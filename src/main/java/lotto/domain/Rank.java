@@ -26,16 +26,16 @@ public enum Rank {
         if(matchCount == 6){
             return FIRST;
         }
-        if(matchCount == 5){
+        if(matchCount == 5 && matchBonus){
             return SECOND;
         }
-        if(matchCount == 4){
+        if(matchCount == 5){
             return THIRD;
         }
-        if(matchCount == 3){
+        if(matchCount == 4){
             return FOURTH;
         }
-        if(matchCount == 2){
+        if(matchCount == 3){
             return FIFTH;
         }
         return MISS;
