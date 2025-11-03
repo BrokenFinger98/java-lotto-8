@@ -32,8 +32,8 @@ class MoneyTest {
         Money money2 = new Money(14000);
 
         // when & then
-        assertThat(money.getPurchasableLottoCount()).isEqualTo(8);
-        assertThat(money2.getPurchasableLottoCount()).isEqualTo(14);
+        assertThat(money.purchasableTicketCount()).isEqualTo(8);
+        assertThat(money2.purchasableTicketCount()).isEqualTo(14);
     }
 
     @DisplayName("투자 금액 대비 수익률을 소수점 한 자리로 반올림하여 계산한다.")
