@@ -45,4 +45,38 @@ class LottoTest {
         // then
         assertThat(sortedNumbers).isEqualTo(expectedNumbers);
     }
+
+    @DisplayName("두 Lotto 간 일치하는 번호 개수를 반환한다.")
+    @Test
+    void 두_Lotto_간_일치하는_번호_개수를_반환한다() {
+        // given
+        Lotto lotto1 = new Lotto(List.of(1, 2, 3, 4, 5, 6));
+        Lotto lotto2 = new Lotto(List.of(3, 4, 5, 6, 7, 8));
+
+        // when
+        int matchCount = lotto1.countMatchWith(lotto2);
+
+        // then
+        assertThat(matchCount).isEqualTo(4);
+    }
+
+    @DisplayName("Lotto가 특정 번호를 포함하면 true를 반환한다.")
+    @Test
+    void Lotto가_특정_번호를_포함하면_true를_반환한다() {
+        // given
+        Lotto lotto = new Lotto(List.of(1, 2, 3, 4, 5, 6));
+
+        // when & then
+        assertThat(lotto.contains(3)).isTrue();
+    }
+
+    @DisplayName("Lotto가 특정 번호를 포함하지 않으면 false를 반환한다.")
+    @Test
+    void Lotto가_특정_번호를_포함하지_않으면_false를_반환한다() {
+        // given
+        Lotto lotto = new Lotto(List.of(1, 2, 3, 4, 5, 6));
+
+        // when & then
+        assertThat(lotto.contains(7)).isFalse();
+    }
 }
