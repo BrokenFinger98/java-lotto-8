@@ -21,7 +21,7 @@ class LottoNumbersPickerTest {
         int count = 6;
 
         // when
-        List<Integer> numbers = lottoNumbersPicker.pickNumbersInRange(min, max, count);
+        List<Integer> numbers = lottoNumbersPicker.pickNumbersInRange();
 
         // then
         assertThat(numbers).hasSize(count);
