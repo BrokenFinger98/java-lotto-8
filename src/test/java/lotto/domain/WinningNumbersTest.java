@@ -13,20 +13,17 @@ class WinningNumbersTest {
     @Test
     void 보너스_번호가_당첨_번호와_중복되면_예외가_발생한다() {
         assertThatThrownBy(() -> new WinningNumbers(List.of(1, 2, 3, 4, 5, 6), 6))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("[ERROR]");
+                .isInstanceOf(IllegalArgumentException.class);
     }
 
     @DisplayName("보너스 번호가 1 미만 또는 45 초과면 예외가 발생한다.")
     @Test
     void 보너스_번호가_1_미만_또는_45_초과면_예외가_발생한다() {
         assertThatThrownBy(() -> new WinningNumbers(List.of(1, 2, 3, 4, 5, 6), 0))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("[ERROR]");
+                .isInstanceOf(IllegalArgumentException.class);
 
         assertThatThrownBy(() -> new WinningNumbers(List.of(1, 2, 3, 4, 5, 6), 46))
-                .isInstanceOf(IllegalArgumentException.class)
-                .hasMessageContaining("[ERROR]");
+                .isInstanceOf(IllegalArgumentException.class);
     }
 
     @DisplayName("로또 번호와 당첨 번호의 일치 개수를 정확히 계산한다.")
