@@ -17,7 +17,7 @@ public class Money {
         return Math.round(ratio * ROUNDING_UNIT) / ROUNDING_UNIT;
     }
 
-    public int getPurchasableLottoCount() {
+    public int purchasableTicketCount() {
         return (int) (amount / LOTTO_PRICE);
     }
 
